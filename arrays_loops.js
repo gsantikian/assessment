@@ -5,7 +5,7 @@ var userTemps = sget('Enter the average temperature for each of the 7 days of th
 function stringToArrayOfNumbers(str) {
   var numbers = [];
   strings = str.split(', ');
-  for (var i = 0, len = strings.length; i < len; i++ ) {
+  for (var i = 0, len = strings.length; i < len; i++) {
     numbers.push(parseInt(strings[i]), 10);
   }
   return numbers;
