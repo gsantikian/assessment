@@ -1,12 +1,14 @@
 var sget = require('sget');
 
-var tempString = sget('Please enter the avg. temperature for 7 days\nPlease enter data like so: 23, 45, 98, 12, 27, 34, 78').trim();
+var userTemps = sget('Enter the average temperature for each of the 7 days of the week.\nSeparate numbers with a comma like so: "23, 45, 98, 12, 27, 34, 78"').trim();
 
-var tempArray = tempString.split(', ');
-
-var temps = [];
-for (var i = 0, len = tempArray.length; i < len; i++) {
-  temps.push(parseInt(tempArray[i], 10));
+function stringToArrayOfNumbers(str) {
+  var numbers = [];
+  strings = str.split(', ');
+  for (var i = 0, len = strings.length; i < len; i++ ) {
+    numbers.push(parseInt(strings[i]), 10);
+  }
+  return numbers;
 }
 
 function calculateAvg(temps) {
@@ -17,4 +19,7 @@ function calculateAvg(temps) {
   return sum / temps.length;
 }
 
-console.log("Average temperature for the week is: " + calculateAvg(temps));
+var temperatures = stringToArrayOfNumbers(userTemps);
+var averageTemp = calculateAvg(temperatures).toFixed(2);
+
+console.log("Average temperature for the week is: " + averageTemp);
