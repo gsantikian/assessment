@@ -14,10 +14,13 @@ function hasCapitalLetter(str) {
   return false;
 }
 
-var userInput = sget("Please enter a password:").trim();
-
-if (userInput.length > 9 && (hasExclamation(userInput) || hasCapitalLetter(userInput))) {
-  console.log("Your password has been created.");
-} else {
-  console.log("Error. Your password must be at least 10 characters long AND contain at least 1 capital letter OR an exclamation point.");
+while (true) {
+  var userInput = sget("Please create a password:").trim();
+  if (userInput.length > 9 && (hasExclamation(userInput) || hasCapitalLetter(userInput))) {
+    console.log("\nYour password has been created.");
+    break;
+  } else {
+    console.log("\nError. Your password must be at least 10 characters long AND contain at least 1 capital letter OR an exclamation point.\n");
+    continue;
+  }
 }
