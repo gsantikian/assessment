@@ -25,26 +25,26 @@ var name = sget("A new penguin has arrived at your zoo! What would you like to n
 
 var play = true;
 
-while(play) {
+while (play) {
   console.log("What would you like to do?\n1 - Feed %s\n2 - Play with %s\n3 - Put %s to sleep\n4 - Scold %s\n5 - Quit game", name, name, name, name);
   var userInput = sget().trim();
   console.log('\033[2J');
   switch (userInput) {
     case '1':
-    feedAnimal(name);
-    break;
+      feedAnimal(name);
+      break;
     case '2':
-    playWithAnimal(name);
-    break;
+      playWithAnimal(name);
+      break;
     case '3':
-    putAnimalToSleep(name);
-    break;
+      putAnimalToSleep(name);
+      break;
     case '4':
-    scoldAnimal(name);
-    break;
+      scoldAnimal(name);
+      break;
     case '5':
-    console.log("Bye for now!");
-    play = false;
-    break;
+      console.log("Bye for now!");
+      play = false;
+      break;
   }
 }
