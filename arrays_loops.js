@@ -17,4 +17,4 @@ function calculateAvg(temps) {
   return sum / temps.length;
 }
 
-console.log(calculateAvg(temps));
+console.log("Average temperature for the week is: " + calculateAvg(temps));
