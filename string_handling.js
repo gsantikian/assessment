@@ -1,13 +1,13 @@
 var sget = require('sget');
 
-function hasExclamation(str) {
+function hasBang(str) {
   return str.indexOf("!") >= 0;
 }
 
 function hasCapitalLetter(str) {
   str = str.replace(/[^a-zA-Z]/g, '');
   for (var i = 0, len = str.length; i < len; i++) {
-    if(str[i] === str[i].toUpperCase()) {
+    if (str[i] === str[i].toUpperCase()) {
       return true;
     }
   }
@@ -16,7 +16,7 @@ function hasCapitalLetter(str) {
 
 while (true) {
   var userInput = sget("Please create a password:").trim();
-  if (userInput.length > 9 && (hasExclamation(userInput) || hasCapitalLetter(userInput))) {
+  if (userInput.length > 9 && (hasBang(userInput) || hasCapitalLetter(userInput))) {
     console.log("\nYour password has been created.");
     break;
   } else {
