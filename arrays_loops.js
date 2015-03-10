@@ -6,7 +6,7 @@ function stringToArrayOfNumbers(str) {
   var numbers = [];
   strings = str.split(', ');
   for (var i = 0, len = strings.length; i < len; i++) {
-    numbers.push(parseInt(strings[i]), 10);
+    numbers.push(parseInt(strings[i], 10));
   }
   return numbers;
 }
